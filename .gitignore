@@ -1,0 +1,12 @@
+# Python / Django
+backend/venv/
+*.pyc
+__pycache__/
+
+# Node / Angular
+frontend/frontend-app/node_modules/
+frontend/frontend-app/dist/
+
+# IDEs
+.vscode/
+.idea/
