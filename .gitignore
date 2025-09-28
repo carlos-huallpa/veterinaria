@@ -10,3 +10,6 @@ frontend/frontend-app/dist/
 # IDEs
 .vscode/
 .idea/
+
+#DB
+backend/db.sqlite3
