@@ -1,0 +1,24 @@
+<div *ngIf="loading">Cargando...</div>
+<div *ngIf="error">{{ error }}</div>
+
+<form [formGroup]="clienteForm" (ngSubmit)="guardarCliente()">
+  <label>Nombre:</label>
+  <input formControlName="nombre">
+
+  <label>Apellido:</label>
+  <input formControlName="apellido">
+
+  <label>DNI:</label>
+  <input formControlName="dni">
+
+  <label>Email:</label>
+  <input formControlName="email">
+
+  <label>Teléfono:</label>
+  <input formControlName="telefono">
+
+  <label>Dirección:</label>
+  <input formControlName="direccion">
+
+  <button type="submit">{{ clienteId ? 'Actualizar' : 'Crear' }}</button>
+</form>
