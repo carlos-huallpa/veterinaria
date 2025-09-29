@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './clientes-form.html',
   styleUrls: ['./clientes-form.css'],
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, RouterModule,],
+  imports: [ReactiveFormsModule, CommonModule, RouterModule],
 })
 export class ClientesForm implements OnInit {
   clienteForm!: FormGroup;
