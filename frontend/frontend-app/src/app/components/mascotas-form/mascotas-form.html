@@ -1,1 +1,25 @@
-<p>mascotas-form works!</p>
+<div *ngIf="loading">Cargando...</div>
+<div *ngIf="error">{{ error }}</div>
+
+<form [formGroup]="mascotaForm" (ngSubmit)="guardarMascota()">
+  <label>Nombre:</label>
+  <input formControlName="nombre">
+
+  <label>Especie:</label>
+  <input formControlName="especie">
+
+  <label>Raza:</label>
+  <input formControlName="raza">
+
+  <label>Fecha de nacimiento:</label>
+  <input type="date" formControlName="fecha_nacimiento">
+
+  <label>Cliente:</label>
+  <select formControlName="cliente">
+    <option *ngFor="let c of clientes" [value]="c.id">
+      {{ c.nombre }} {{ c.apellido }}
+    </option>
+  </select>
+
+  <button type="submit">{{ mascotaId ? 'Actualizar' : 'Crear' }}</button>
+</form>

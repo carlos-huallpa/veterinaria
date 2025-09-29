@@ -1,1 +1,28 @@
-<p>mascotas-list works!</p>
+<div *ngIf="loading">Cargando mascotas...</div>
+<div *ngIf="error">{{ error }}</div>
+
+<table *ngIf="mascotas.length > 0">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Especie</th>
+      <th>Raza</th>
+      <th>Fecha de nacimiento</th>
+      <th>Cliente</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let mascota of mascotas">
+      <td>{{ mascota.nombre }}</td>
+      <td>{{ mascota.especie }}</td>
+      <td>{{ mascota.raza }}</td>
+      <td>{{ mascota.fecha_nacimiento }}</td>
+      <td>{{ getClienteNombre(mascota.cliente) }}</td>
+      <td>
+        <button [routerLink]="['/mascotas-form', mascota.id]">Editar</button>
+        <button (click)="eliminarMascota(mascota.id!)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
