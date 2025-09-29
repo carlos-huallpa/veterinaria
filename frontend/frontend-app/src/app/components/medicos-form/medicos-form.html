@@ -1,1 +1,24 @@
-<p>medicos-form works!</p>
+<div *ngIf="loading">Cargando...</div>
+<div *ngIf="error">{{ error }}</div>
+
+<form [formGroup]="medicoForm" (ngSubmit)="guardarMedico()">
+  <label>Nombre:</label>
+  <input formControlName="nombre">
+
+  <label>Apellido:</label>
+  <input formControlName="apellido">
+
+  <label>Matrícula:</label>
+  <input formControlName="matricula">
+
+  <label>Especialidad:</label>
+  <input formControlName="especialidad">
+
+  <label>Teléfono:</label>
+  <input formControlName="telefono">
+
+  <label>Email:</label>
+  <input formControlName="email">
+
+  <button type="submit">{{ medicoId ? 'Actualizar' : 'Crear' }}</button>
+</form>

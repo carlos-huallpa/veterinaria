@@ -3,6 +3,8 @@ import { ClientesList } from './components/clientes-list/clientes-list';
 import { ClientesForm } from './components/clientes-form/clientes-form';
 import { MascotasList } from './components/mascotas-list/mascotas-list';
 import { MascotasForm } from './components/mascotas-form/mascotas-form';
+import { MedicosList } from './components/medicos-list/medicos-list';
+import { MedicosForm } from './components/medicos-form/medicos-form';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'clientes-list', pathMatch: 'full' },
@@ -12,4 +14,7 @@ export const routes: Routes = [
   { path: 'mascotas-list', component: MascotasList },
   { path: 'mascotas-form', component: MascotasForm },
   { path: 'mascotas-form/:id', component: MascotasForm },
+  { path: 'medicos-list', component: MedicosList },
+  { path: 'medicos-form', component: MedicosForm },
+  { path: 'medicos-form/:id', component: MedicosForm },
 ];

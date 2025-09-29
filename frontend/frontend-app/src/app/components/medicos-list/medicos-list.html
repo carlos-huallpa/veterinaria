@@ -1,1 +1,30 @@
-<p>medicos-list works!</p>
+<div *ngIf="loading">Cargando médicos...</div>
+<div *ngIf="error">{{ error }}</div>
+
+<table *ngIf="medicos.length > 0">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Matrícula</th>
+      <th>Especialidad</th>
+      <th>Teléfono</th>
+      <th>Email</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let medico of medicos">
+      <td>{{ medico.nombre }}</td>
+      <td>{{ medico.apellido }}</td>
+      <td>{{ medico.matricula }}</td>
+      <td>{{ medico.especialidad }}</td>
+      <td>{{ medico.telefono }}</td>
+      <td>{{ medico.email }}</td>
+      <td>
+        <button [routerLink]="['/medicos-form', medico.id]">Editar</button>
+        <button (click)="eliminarMedico(medico.id!)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
