@@ -1,1 +1,27 @@
-<p>turnos-form works!</p>
+<div *ngIf="loading">Cargando...</div>
+<div *ngIf="error">{{ error }}</div>
+
+<form [formGroup]="turnoForm" (ngSubmit)="guardarTurno()">
+  <label>Fecha:</label>
+  <input type="date" formControlName="fecha">
+
+  <label>Hora:</label>
+  <input type="time" formControlName="hora">
+
+  <label>Mascota:</label>
+  <select formControlName="mascota">
+    <option *ngFor="let m of mascotas" [value]="m.id">{{ m.nombre }}</option>
+  </select>
+
+  <label>Médico:</label>
+  <select formControlName="medico">
+    <option *ngFor="let med of medicos" [value]="med.id">
+      Dr/a. {{ med.apellido }}, {{ med.nombre }}
+    </option>
+  </select>
+
+  <label>Motivo:</label>
+  <input formControlName="motivo">
+
+  <button type="submit">{{ turnoId ? 'Actualizar' : 'Crear' }}</button>
+</form>

@@ -1,1 +1,28 @@
-<p>turnos-list works!</p>
+<div *ngIf="loading">Cargando turnos...</div>
+<div *ngIf="error">{{ error }}</div>
+
+<table *ngIf="turnos.length > 0">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Hora</th>
+      <th>Mascota</th>
+      <th>Médico</th>
+      <th>Motivo</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let turno of turnos">
+      <td>{{ turno.fecha }}</td>
+      <td>{{ turno.hora }}</td>
+      <td>{{ getMascotaNombre(turno.mascota) }}</td>
+      <td>{{ getMedicoNombre(turno.medico) }}</td>
+      <td>{{ turno.motivo }}</td>
+      <td>
+        <button [routerLink]="['/turnos-form', turno.id]">Editar</button>
+        <button (click)="eliminarTurno(turno.id!)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
