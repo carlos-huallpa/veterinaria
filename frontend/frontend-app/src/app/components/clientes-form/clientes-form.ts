@@ -32,8 +32,8 @@ export class ClientesForm implements OnInit {
       apellido: ['', Validators.required],
       dni: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      telefono: [''],
-      direccion: ['']
+      direccion: [''],
+      telefono: ['']
     });
 
     if (this.clienteId) {

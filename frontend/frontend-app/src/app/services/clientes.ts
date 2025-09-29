@@ -10,8 +10,9 @@ export interface Cliente {
   apellido: string;
   dni: string;
   email: string;
-  telefono?: string;
   direccion?: string;
+  telefono?: string;
+
 }
 
 @Injectable({
