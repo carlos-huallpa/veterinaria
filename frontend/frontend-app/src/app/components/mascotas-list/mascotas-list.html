@@ -1,7 +1,8 @@
 <div *ngIf="loading">Cargando mascotas...</div>
 <div *ngIf="error">{{ error }}</div>
 
-<table *ngIf="mascotas.length > 0">
+<div class="table-section">
+  <table *ngIf="mascotas.length > 0">
   <thead>
     <tr>
       <th>Nombre</th>
@@ -20,9 +21,10 @@
       <td>{{ mascota.fecha_nacimiento }}</td>
       <td>{{ getClienteNombre(mascota.cliente) }}</td>
       <td>
-        <button [routerLink]="['/mascotas-form', mascota.id]">Editar</button>
-        <button (click)="eliminarMascota(mascota.id!)">Eliminar</button>
+        <button class="btn btn-primary" [routerLink]="['/mascotas-form', mascota.id]">Editar</button>
+        <button class="btn btn-primary" (click)="eliminarMascota(mascota.id!)">Eliminar</button>
       </td>
     </tr>
   </tbody>
-</table>
+  </table>
+</div>

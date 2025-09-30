@@ -11,7 +11,7 @@ import { MedicosService, Medico } from '../../services/medicos';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './turnos-list.html',
-  styleUrls: ['./turnos-list.css']
+  styleUrls: ['../../styles/lists.css']
 })
 export class TurnosList implements OnInit {
   turnos: Turno[] = [];

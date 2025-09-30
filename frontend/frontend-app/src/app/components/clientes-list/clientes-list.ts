@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-clientes-list',
   templateUrl: './clientes-list.html',  // Archivo HTML asociado
-  styleUrls: ['./clientes-list.css'],    // Archivo CSS asociado
+  styleUrls: ['../../styles/lists.css'],    // Archivo CSS asociado
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule, RouterModule,],
 })

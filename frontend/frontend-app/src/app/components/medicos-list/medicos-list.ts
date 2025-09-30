@@ -9,7 +9,7 @@ import { MedicosService, Medico } from '../../services/medicos';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './medicos-list.html',
-  styleUrls: ['./medicos-list.css']
+  styleUrls: ['../../styles/lists.css']
 })
 export class MedicosList implements OnInit {
   medicos: Medico[] = [];

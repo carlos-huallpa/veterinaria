@@ -11,7 +11,7 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './mascotas-form.html',
-  styleUrls: ['../clientes-form/clientes-form.css']
+  styleUrls: ['../../styles/forms.css']
 })
 export class MascotasForm implements OnInit {
   mascotaForm!: FormGroup;

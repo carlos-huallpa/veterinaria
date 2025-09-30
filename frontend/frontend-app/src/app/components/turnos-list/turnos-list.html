@@ -1,7 +1,8 @@
 <div *ngIf="loading">Cargando turnos...</div>
 <div *ngIf="error">{{ error }}</div>
 
-<table *ngIf="turnos.length > 0">
+<div class="table-section">
+  <table *ngIf="turnos.length > 0">
   <thead>
     <tr>
       <th>Fecha</th>
@@ -20,9 +21,10 @@
       <td>{{ getMedicoNombre(turno.medico) }}</td>
       <td>{{ turno.motivo }}</td>
       <td>
-        <button [routerLink]="['/turnos-form', turno.id]">Editar</button>
-        <button (click)="eliminarTurno(turno.id!)">Eliminar</button>
+        <button class="btn btn-primary" [routerLink]="['/turnos-form', turno.id]">Editar</button>
+        <button class="btn btn-primary" (click)="eliminarTurno(turno.id!)">Eliminar</button>
       </td>
     </tr>
   </tbody>
-</table>
+  </table>
+</div>

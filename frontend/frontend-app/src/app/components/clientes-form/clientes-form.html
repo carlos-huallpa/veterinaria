@@ -35,6 +35,9 @@
         <input formControlName="telefono">
       </div>
   </div>
-
+<div class="button-row">
   <button type="submit">{{ clienteId ? 'Actualizar' : 'Crear' }}</button>
+  <button type="button" [routerLink]="'/clientes-list'">Ver Clientes</button>
+</div>
+
 </form>

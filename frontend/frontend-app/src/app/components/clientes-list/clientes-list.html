@@ -1,7 +1,8 @@
 <div *ngIf="loading">Cargando clientes...</div>
 <div *ngIf="error">{{ error }}</div>
 
-<table *ngIf="clientes.length > 0">
+<div class="table-section">
+  <table *ngIf="clientes.length > 0">
   <thead>
     <tr>
       <th>Nombre</th>
@@ -20,9 +21,10 @@
       <td>{{ cliente.email }}</td>
       <td>{{ cliente.telefono }}</td>
       <td>
-        <button [routerLink]="['/clientes-form', cliente.id]">Editar</button>
-        <button (click)="eliminarCliente(cliente.id!)">Eliminar</button>
+        <button class="btn btn-primary" [routerLink]="['/clientes-form', cliente.id]">Editar</button>
+        <button class="btn btn-primary" (click)="eliminarCliente(cliente.id!)">Eliminar</button>
       </td>
     </tr>
   </tbody>
-</table>
+  </table>
+</div>

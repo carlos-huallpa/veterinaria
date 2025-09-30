@@ -10,7 +10,7 @@ import { ClientesService, Cliente } from '../../services/clientes';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './mascotas-list.html',
-  styleUrls: ['./mascotas-list.css']
+  styleUrls: ['../../styles/lists.css']
 })
 export class MascotasList implements OnInit {
   mascotas: Mascota[] = [];

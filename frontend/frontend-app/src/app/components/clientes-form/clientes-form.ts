@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-clientes-form',
   templateUrl: './clientes-form.html',
-  styleUrls: ['./clientes-form.css'],
+  styleUrls: ['../../styles/forms.css'],
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule, RouterModule],
 })
