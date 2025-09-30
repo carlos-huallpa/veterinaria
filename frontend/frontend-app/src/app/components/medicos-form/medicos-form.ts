@@ -10,7 +10,7 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './medicos-form.html',
-  styleUrls: ['./medicos-form.css']
+  styleUrls: ['../clientes-form/clientes-form.css']
 })
 export class MedicosForm implements OnInit {
   medicoForm!: FormGroup;
