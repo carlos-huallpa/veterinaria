@@ -24,14 +24,16 @@
     </div>
   </div>
 
-  <div class="form-group full-width">
-    <label>Dirección:</label>
-    <input formControlName="direccion">
-  </div>
+  <div class="form-row">
+      <div class="form-group full-width">
+        <label>Dirección:</label>
+        <input formControlName="direccion">
+      </div>
 
-  <div class="form-group full-width">
-    <label>Teléfono:</label>
-    <input formControlName="telefono">
+      <div class="form-group full-width">
+        <label>Teléfono:</label>
+        <input formControlName="telefono">
+      </div>
   </div>
 
   <button type="submit">{{ clienteId ? 'Actualizar' : 'Crear' }}</button>
