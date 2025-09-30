@@ -26,14 +26,14 @@ form {
 }
 
 .form-group.full-width {
-  grid-column: 1 / -1; /* ocupa todo el ancho */
+  grid-column: 1 / -1; 
 }
 
 /* Etiquetas */
 label {
   font-size: 14px;
   font-weight: 500;
-  color: #065f46; /* verde oscuro */
+  color: #065f46; 
 }
 
 /* Inputs */
@@ -72,6 +72,13 @@ button {
 
 button:hover {
   background: #047857;
+}
+
+.button-row {
+  display: flex;
+  justify-content: flex-end; 
+  gap: 12px;                 
+  margin-top: 12px;
 }
 
 /* Mensajes */

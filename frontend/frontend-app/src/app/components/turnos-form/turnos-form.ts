@@ -12,7 +12,7 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './turnos-form.html',
-  styleUrls: ['./turnos-form.css']
+  styleUrls: ['../clientes-form/clientes-form.css']
 })
 export class TurnosForm implements OnInit {
   turnoForm!: FormGroup;

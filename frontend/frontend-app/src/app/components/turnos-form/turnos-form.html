@@ -2,26 +2,44 @@
 <div *ngIf="error">{{ error }}</div>
 
 <form [formGroup]="turnoForm" (ngSubmit)="guardarTurno()">
-  <label>Fecha:</label>
-  <input type="date" formControlName="fecha">
+    <div class="form-row">
+    <div class="form-group">
+      <label>Fecha:</label>
+      <input type="date" formControlName="fecha">
+    </div>
+    <div class="form-group">
+      <label>Hora:</label>
+      <input type="time" formControlName="hora">
+    </div>
+  </div>
 
-  <label>Hora:</label>
-  <input type="time" formControlName="hora">
+  <div class="form-row">
+    <div class="form-group">
+      <label>Mascota:</label>
+      <select formControlName="mascota">
+        <option *ngFor="let m of mascotas" [value]="m.id">{{ m.nombre }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Médico:</label>
+      <select formControlName="medico">
+        <option *ngFor="let med of medicos" [value]="med.id">
+          Dr/a. {{ med.apellido }}, {{ med.nombre }}
+        </option>
+      </select>
+    </div>
+  </div>
 
-  <label>Mascota:</label>
-  <select formControlName="mascota">
-    <option *ngFor="let m of mascotas" [value]="m.id">{{ m.nombre }}</option>
-  </select>
+  <div class="form-row">
+      <div class="form-group">
+        <label>Motivo:</label>
+        <input formControlName="motivo">
+      </div>
+  </div>
 
-  <label>Médico:</label>
-  <select formControlName="medico">
-    <option *ngFor="let med of medicos" [value]="med.id">
-      Dr/a. {{ med.apellido }}, {{ med.nombre }}
-    </option>
-  </select>
-
-  <label>Motivo:</label>
-  <input formControlName="motivo">
-
-  <button type="submit">{{ turnoId ? 'Actualizar' : 'Crear' }}</button>
+  <div class="button-row">
+    <button type="submit">{{ turnoId ? 'Actualizar' : 'Crear' }}</button>
+    <button type="button" [routerLink]="'/turnos-list'">Ver Turnos</button>
+  </div>
+  
 </form>
