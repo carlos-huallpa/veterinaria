@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "mascotas",
     "medicos",
     "turnos",
+    "dashboard",
     "corsheaders",
 ]
 
