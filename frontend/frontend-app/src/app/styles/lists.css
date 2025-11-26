@@ -5,7 +5,8 @@
   background: #ffffff;
   border: 1px solid #d1fae5;
   border-radius: 12px;
-  padding: 2px;
+  padding: 32px;
+  margin-bottom: 32px;
 }
 
 .table-header {

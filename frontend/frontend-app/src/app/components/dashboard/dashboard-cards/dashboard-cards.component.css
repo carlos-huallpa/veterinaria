@@ -1,0 +1,84 @@
+ /* Metrics Grid */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    
+    .metric-card {
+      background: #ffffff;
+      border: 1px solid #d1fae5;
+      border-radius: 12px;
+      padding: 28px;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .metric-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, #10b981 0%, #059669 100%);
+    }
+    
+    .metric-card:hover {
+      border-color: #10b981;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.15);
+    }
+    
+    .metric-label {
+      font-size: 14px;
+      color: #6b7280;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    
+    .metric-value {
+      font-size: 36px;
+      font-weight: 600;
+      color: #047857;
+      letter-spacing: -1px;
+    }
+    
+    .metric-change {
+      font-size: 13px;
+      color: #059669;
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-weight: 500;
+    }
+    
+.metric-change.positivo {
+  color: #059669; /* verde */
+}
+
+.metric-change.positivo::before {
+  content: '↑';
+  color: #059669;
+}
+
+.metric-change.negativo {
+  color: #dc2626; /* rojo */
+}
+
+.metric-change.negativo::before {
+  content: '↓';
+  color: #dc2626;
+}
+
+.metric-change.neutral {
+  color: #6b7280; /* gris */
+}
+
+.metric-change.neutral::before {
+  content: '—';
+  color: #6b7280;
+}

@@ -1,0 +1,32 @@
+<div class="table-section">
+    <div class="table-header">
+        <h2>Próximos turnos</h2>
+    </div>
+    <div class="table">
+        <thead>
+            <tr>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Mascota</th>
+            <th>Médico</th>
+            <th>Motivo</th>
+            <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (turno of proximosTurnos; track $index){
+                <tr>
+                    <td>{{ turno.fecha }}</td>
+                    <td>{{ turno.hora }}</td>
+                    <td>{{ getMascotaNombre(turno.mascota) }}</td>
+                    <td>{{ getMedicoNombre(turno.medico) }}</td>
+                    <td>{{ turno.motivo }}</td>
+
+                </tr>
+            }
+
+        </tbody>
+    </div>
+</div>    
+    
+

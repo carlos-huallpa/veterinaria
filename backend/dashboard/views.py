@@ -3,6 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from turnos.models import Turno
 from turnos.serializers import TurnoSerializer
+from django.db.models import Count, F
 
 @api_view(['GET'])
 def dashboard_view(request):
@@ -22,6 +23,25 @@ def dashboard_view(request):
         fecha__month=mes_anterior_month
     ).count()
 
+    if mes_anterior == 0:
+        mes_ratio_dif = None    
+    else:
+        mes_ratio_dif = (mes_actual - mes_anterior) / mes_anterior
+   
+    #Turnos del mes por médico
+    top_medico_mes = (
+        Turno.objects
+        .filter(fecha__year=hoy.year, fecha__month=hoy.month)
+        .values(
+            nombre=F("medico__nombre"),
+            apellido=F("medico__apellido"),
+        )    
+        .annotate(total=Count("id"))
+        .order_by("-total")
+        .first()
+    )
+
+    # Turnos a lo largo de 6 meses
     estadistica_6 = []
     for i in range(6):
         mes = hoy.month - i
@@ -45,5 +65,7 @@ def dashboard_view(request):
         "ultimos_turnos": TurnoSerializer(ultimos, many=True).data,
         "mes_actual": mes_actual,
         "mes_anterior": mes_anterior,
-        "estadistica_6_meses": estadistica_6
+        "estadistica_6_meses": estadistica_6,
+        "mes_ratio": mes_ratio_dif,
+        "top_medico": top_medico_mes,
     })

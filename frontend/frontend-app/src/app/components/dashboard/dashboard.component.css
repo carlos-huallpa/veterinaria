@@ -1,0 +1,39 @@
+h2 {
+  margin-bottom: 20px;
+}
+
+h3 {
+  margin-top: 30px;
+  color: #065f46;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+.loading {
+  color: #047857;
+  font-weight: bold;
+}
+
+.error {
+  color: #b91c1c;
+  font-weight: bold;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+    
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f8faf9;
+  color: #1a1a1a;
+}
+    
+.container {
+  display: flex;
+  min-height: 100vh;
+}

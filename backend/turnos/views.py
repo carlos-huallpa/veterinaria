@@ -4,5 +4,5 @@ from .models import Turno
 from .serializers import TurnoSerializer
 
 class TurnoViewSet(viewsets.ModelViewSet):
-    queryset = Turno.objects.all()
+    queryset = Turno.objects.all().order_by('fecha', 'hora')
     serializer_class = TurnoSerializer

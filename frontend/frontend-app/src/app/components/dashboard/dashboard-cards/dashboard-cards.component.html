@@ -1,0 +1,19 @@
+<div class="metrics-grid">
+  <div class="metric-card">
+    <div class="metric-label">Turnos mes actual</div>
+    <div class="metric-value">{{ mesActual }}</div>
+    <div class="metric-change" [ngClass]="{'positivo': mesRatioDif > 0,'negativo': mesRatioDif < 0,'neutral': mesRatioDif === 0}">
+      {{ mesRatioDif *100 | number:'1.1-1'}}% vs Mes Anterior
+    </div>
+  </div>
+    <div class="metric-card">
+    <div class="metric-label">Top médico</div>
+    <div class="metric-value">{{ topMedicoMes?.apellido || 'Sin datos'}}, {{ topMedicoMes?.nombre || 'Sin datos'}}</div>
+   
+
+  </div>
+  <div class="metric-card">
+    <h3>Turnos mes pasado</h3>
+    <p>{{ mesAnterior }}</p>
+  </div>
+</div>

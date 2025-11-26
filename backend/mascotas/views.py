@@ -4,5 +4,5 @@ from .models import Mascota
 from .serializers import MascotaSerializer
 
 class MascotaViewSet(viewsets.ModelViewSet):
-    queryset = Mascota.objects.all()
+    queryset = Mascota.objects.all().order_by('nombre')
     serializer_class = MascotaSerializer

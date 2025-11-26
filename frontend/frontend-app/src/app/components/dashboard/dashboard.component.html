@@ -1,0 +1,30 @@
+<h2>Dashboard</h2>
+
+<div *ngIf="loading" class="loading">Cargando...</div>
+<div *ngIf="error" class="error">{{ error }}</div>
+
+<div class="body">
+  <div class="container">
+    <div *ngIf="data">
+    <app-dashboard-cards
+      [mesActual]="data.mes_actual"
+      [mesAnterior]="data.mes_anterior"
+      [mesRatioDif]="data.mes_ratio"
+      [topMedicoMes]="data.top_medico">
+
+    </app-dashboard-cards>
+
+    <app-dashboard-list
+      [proximosTurnos]="data.proximos_turnos"
+      [ultimosTurnos]="data.ultimos_turnos"
+      [mascotas]="mascotas"
+      [medicos]="medicos">
+    </app-dashboard-list>
+    
+    <app-dashboard-grafico
+      [estadistica6Meses]="data.estadistica_6_meses">
+    </app-dashboard-grafico>
+</div>
+  </div>
+</div>
+
